@@ -1,9 +1,30 @@
-<%= form_for(@task) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="container">
+  <div class="row">
+      <div class="card card-edit">
+        <div class="card-body">
+          <%= form_for(@task) do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+            <div>
+              <%= f.label :details %>
+              <%= f.text_field :details %>
+            </div>
 
-  <%= f.label :details %>
-  <%= f.text_field :details %>
+            <%= f.submit :class => "btn btn-primary"%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= f.submit %>
-<% end %>
+<div class="login-page">
+  <div class="form">
+    <form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <button>login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>

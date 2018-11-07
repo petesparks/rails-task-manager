@@ -1,7 +1,16 @@
-<h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<p><%= link_to "Delete task", task_path(@task), method: :delete %></p>
-<p><%= link_to "Edit task", edit_path(@task) %></p>
-<p><%= link_to "Tasks index", tasks_path %></p>
+<div class="container">
+  <div class="row">
+      <div class="card" style="width: 500px;">
+        <div class="card-body">
+          <h2 class="card-title"><%= @task.title %></h2>
+          <p><%= @task.details %></p>
+          <p><%= link_to "Delete task", task_path(@task), method: :delete, :class => "btn btn-primary" %></p>
+          <p><%= link_to "Edit task", edit_path(@task), :class => "btn btn-primary" %></p>
+          <p><%= link_to "Tasks index", tasks_path, :class => "btn btn-primary" %></p>
+        </div>
+      </div>
+  </div>
+</div>
+
 
 

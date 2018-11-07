@@ -1,7 +1,21 @@
-<% @tasks.each do |task| %>
-<h1><%= link_to task[:title], task_path(task) %></h1>
-<h2><%= task[:details] %></h2>
-<p><%= link_to "Delete task", task_path(task), method: :delete, data: {confirm: "Are you sure?"} %></p>
-<p><%= link_to "Edit task", edit_path(task) %></p>
+  <div class="container">
+    <p><%= link_to "New task", new_path(@task), :class => "btn btn-primary" %></p>
+    <div class="row">
+      <% @tasks.each do |task| %>
+      <div class="col-sm-4">
+        <div class="card" style="width: 350px;">
+          <div class="card-body">
+            <h1 class="card-title"><%= link_to task[:title], task_path(task) %></h1>
+            <h2><%= task[:details] %></h2>
+            <p><%= link_to "Delete task", task_path(task), method: :delete, data: {confirm: "Are you sure?"}, :class => "btn btn-primary" %></p>
+            <p><%= link_to "Edit task", edit_path(task), :class => "btn btn-primary" %></p>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 
-<% end %>
+
+
